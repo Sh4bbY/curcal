@@ -2,34 +2,56 @@
 
 CurCal ist die Umsetzung einer Aufgabe einen Währungsumrechner in PHP zu implementiern.
 
-### Requirements
-
-- A User should be able to input
-
-### Task
-
-- Build an working and well tested MVP
-
-### comments:
-
-- use nightwatch for e2e testing
-- use codeship for ci
-
+***
 ## Development:
 
-#### start php server
+### start php server
 ```bash
 php5 -S localhost:1337 -t public/
 ```
+or
+```bash
+php5 curcal serve
+```
+***
+### run unit tests
 
-#### run unit tests
+to run unit tests phpunit has to be installed. this can be done using composer
+
+##### get composer (if not already installed)
+```bash
+curl -sS https://getcomposer.org/installer | php
+```
+
+##### get php unit
+```bash
+composer install
+```
+
+##### run tests
 ```bash
 php vendor/phpunit/phpunit/phpunit --color app/tests/unit
 ```
+or
+```bash
+php5 curcal test
+```
+***
+### build style files
 
+requirement: node has to be installed on the machine
 
+#### Install modules
+```bash
+npm install
+```
 
+#### build css files (run gulp stylus)
+```bash
+gulp stylus
+```
 
+***
 
 ## MySQL setup
 ### table: curreny
