@@ -16,16 +16,15 @@ class CalculatorCtrl
     $value = trim($value);
 
     try
+    {
+      $rate = RateService::getRateByCurrencyIds($from, $to);
+
+      if(!isset($rate))
       {
-        $rate = RateService::getRateByCurrencyIds($from, $to);
-
-        if(!isset($rate))
-        {
-          return false;
-        }
-
-        return $this->calculateByRate($rate, $value);
+        return false;
       }
+
+      return $this->calculateByRate($rate, $value);
     }
     catch(Exception $err)
     {
