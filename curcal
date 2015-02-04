@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+$cmd = isset($argv[1])? $argv[1] : null;
+
+if($cmd == null)
+{
+  echo "no cmd given\n";
+  return false;
+}
+
+switch($cmd)
+{
+  case 'serve': serve();break;
+  case 'test': test();break;
+  default: echo "no cmd given";
+}
+
+function serve()
+{
+  shell_exec('php5 -S localhost:1337 -t public');
+  echo "Server started. listening on port 1337\n";
+}
+
+function test()
+{
+  echo shell_exec('php5 vendor/phpunit/phpunit/phpunit --color app/tests/unit');
+}

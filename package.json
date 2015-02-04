@@ -1,0 +1,21 @@
+{
+  "name": "curcal",
+  "version": "1.0.0",
+  "description": "CurCal ist die Umsetzung einer Aufgabe einen Währungsumrechner in PHP zu implementiern.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:ShabbY/curcal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.5.0",
+    "axis": "^0.3.0",
+    "gulp": "^3.8.10",
+    "gulp-stylus": "^2.0.0"
+  }
+}
