@@ -16,14 +16,6 @@ class CalculatorCtrl
     $value = trim($value);
 
     try
-    {
-      $this->checkInputs($from, $to, $value);
-
-      if($from == $to)
-      {
-        return $value;
-      }
-      else
       {
         $rate = RateService::getRateByCurrencyIds($from, $to);
 
@@ -70,7 +62,7 @@ class CalculatorCtrl
       throw new  Exception(LANG::get('error','invalid-input'));
     }
 
-    if(RateService::getRateByCurrencyIds($from, $to) == NULL)
+    if($from != $to && RateService::getRateByCurrencyIds($from, $to) == NULL)
     {
       $cFrom = CurrencyService::getCurrency($from);
       $cTo = CurrencyService::getCurrency($to);
