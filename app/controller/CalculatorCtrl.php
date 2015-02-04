@@ -52,7 +52,7 @@ class CalculatorCtrl
           'value' => $value,
           'result' => $result,
           'sign_from' => CurrencyService::getCurrency($from)->getSign(),
-          'sign_to' => CurrencyService::getCurrency($from)->getSign()
+          'sign_to' => CurrencyService::getCurrency($to)->getSign()
       );
       return LANG::get('curcal','result-string', $values);
     }
